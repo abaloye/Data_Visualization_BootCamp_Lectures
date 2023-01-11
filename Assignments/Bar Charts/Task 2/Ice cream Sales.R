@@ -1,0 +1,27 @@
+#Import the library
+library("ggplot2")
+
+#Load the dataset
+ice_cream <- read.csv("//Users//motolanikay-salami//Downloads//bar_chart_homework_II_data.csv",
+                         header = TRUE,
+                         sep=",")
+#plot the bar chart
+bar_chart <- ggplot(ice_cream,
+                    aes(x = Cities,
+                        y = Frequency)) + 
+  geom_bar(stat = "identity",
+           width = 0.8,
+           color = "red",
+           fill = "red") + 
+  ggtitle("Ice Cream Sales of Cities") + 
+  theme_classic() +
+  theme(axis.text.x = element_text(angle = 45,
+                                   hjust = 1)) +
+  labs(x = NULL,
+       y = "Frequency")
+
+bar_chart
+
+
+
+
